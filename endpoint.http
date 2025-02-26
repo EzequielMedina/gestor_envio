@@ -1,0 +1,10 @@
+###
+POST http://localhost:8085/v1/envio/RegistrarEnvio 
+content-type: application/json
+
+{
+    "remitente": "Juan Perez",
+    "destinatario": "Maria Lopez",
+    "direccion_destino": "Calle 123",
+    "peso": 5.0
+}
