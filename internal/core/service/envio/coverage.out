@@ -1,0 +1,19 @@
+mode: set
+main.go/internal/core/service/envio/envio.go:16.110,21.2 1 1
+main.go/internal/core/service/envio/envio.go:23.69,24.39 1 1
+main.go/internal/core/service/envio/envio.go:24.39,26.3 1 1
+main.go/internal/core/service/envio/envio.go:27.2,27.43 1 1
+main.go/internal/core/service/envio/envio.go:27.43,29.3 1 1
+main.go/internal/core/service/envio/envio.go:30.2,30.36 1 1
+main.go/internal/core/service/envio/envio.go:30.36,32.3 1 1
+main.go/internal/core/service/envio/envio.go:33.2,33.30 1 1
+main.go/internal/core/service/envio/envio.go:33.30,35.3 1 1
+main.go/internal/core/service/envio/envio.go:36.2,36.12 1 1
+main.go/internal/core/service/envio/envio.go:39.75,52.2 3 1
+main.go/internal/core/service/envio/registrarEnvio.go:7.94,11.16 2 1
+main.go/internal/core/service/envio/registrarEnvio.go:11.16,13.3 1 1
+main.go/internal/core/service/envio/registrarEnvio.go:15.2,19.16 3 1
+main.go/internal/core/service/envio/registrarEnvio.go:19.16,21.3 1 1
+main.go/internal/core/service/envio/registrarEnvio.go:22.2,25.16 3 1
+main.go/internal/core/service/envio/registrarEnvio.go:25.16,27.3 1 1
+main.go/internal/core/service/envio/registrarEnvio.go:29.2,29.37 1 1
