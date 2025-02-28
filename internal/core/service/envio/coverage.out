@@ -10,6 +10,11 @@ main.go/internal/core/service/envio/envio.go:33.2,33.30 1 1
 main.go/internal/core/service/envio/envio.go:33.30,35.3 1 1
 main.go/internal/core/service/envio/envio.go:36.2,36.12 1 1
 main.go/internal/core/service/envio/envio.go:39.75,52.2 3 1
+main.go/internal/core/service/envio/envioByNumeroSeguimiento.go:5.93,7.16 2 0
+main.go/internal/core/service/envio/envioByNumeroSeguimiento.go:7.16,9.3 1 0
+main.go/internal/core/service/envio/envioByNumeroSeguimiento.go:10.2,11.16 2 0
+main.go/internal/core/service/envio/envioByNumeroSeguimiento.go:11.16,13.3 1 0
+main.go/internal/core/service/envio/envioByNumeroSeguimiento.go:14.2,14.19 1 0
 main.go/internal/core/service/envio/registrarEnvio.go:7.94,11.16 2 1
 main.go/internal/core/service/envio/registrarEnvio.go:11.16,13.3 1 1
 main.go/internal/core/service/envio/registrarEnvio.go:15.2,19.16 3 1
@@ -17,3 +22,11 @@ main.go/internal/core/service/envio/registrarEnvio.go:19.16,21.3 1 1
 main.go/internal/core/service/envio/registrarEnvio.go:22.2,25.16 3 1
 main.go/internal/core/service/envio/registrarEnvio.go:25.16,27.3 1 1
 main.go/internal/core/service/envio/registrarEnvio.go:29.2,29.37 1 1
+main.go/internal/core/service/envio/validarNumeroSeguimiento.go:5.76,7.16 2 0
+main.go/internal/core/service/envio/validarNumeroSeguimiento.go:7.16,9.3 1 0
+main.go/internal/core/service/envio/validarNumeroSeguimiento.go:10.2,11.16 2 0
+main.go/internal/core/service/envio/validarNumeroSeguimiento.go:11.16,13.3 1 0
+main.go/internal/core/service/envio/validarNumeroSeguimiento.go:14.2,14.12 1 0
+main.go/internal/core/service/envio/validarNumeroSeguimiento.go:17.58,18.24 1 0
+main.go/internal/core/service/envio/validarNumeroSeguimiento.go:18.24,20.3 1 0
+main.go/internal/core/service/envio/validarNumeroSeguimiento.go:21.2,21.12 1 0
