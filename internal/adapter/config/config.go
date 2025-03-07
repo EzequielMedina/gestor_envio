@@ -8,9 +8,10 @@ import (
 
 type (
 	Container struct {
-		App  *App
-		DB   *DB
-		Http *Http
+		App        *App
+		DB         *DB
+		Http       *Http
+		ClientFact *ClientFacturacion
 	}
 
 	App struct {
@@ -30,6 +31,11 @@ type (
 		Url            string
 		Port           string
 		AllowedOrigins string
+	}
+
+	ClientFacturacion struct {
+		BaseUrl        string
+		GenerarFactura string
 	}
 )
 
@@ -60,9 +66,14 @@ func New() (*Container, error) {
 		Port:           os.Getenv("HTTP_PORT"),
 		AllowedOrigins: os.Getenv("APP_ALLOWED_ORIGINS"),
 	}
+	clientFacturacion := &ClientFacturacion{
+		BaseUrl:        os.Getenv("CLIENT_FACTURACION_BASE_URL"),
+		GenerarFactura: os.Getenv("CLIENT_FACTURACION_GENERAR_FACTURA"),
+	}
 	return &Container{
-		App:  app,
-		DB:   db,
-		Http: http,
+		App:        app,
+		DB:         db,
+		Http:       http,
+		ClientFact: clientFacturacion,
 	}, nil
 }

@@ -8,3 +8,20 @@ content-type: application/json
     "direccion_destino": "Calle 123",
     "peso": 5.0
 }
+
+###
+POST http://localhost:8085/v1/asignaciones/AsignarEnvio
+content-type: application/json
+
+{
+    "numero_seguimiento": "409fcf62-9269-40f6-a48d-52bbd6ec4b69",
+    "email_transportista": "juan.perez@example.com"
+}
+
+###
+PATCH  http://localhost:8085/v1/envio/ActualizarEstado/409fcf62-9269-40f6-a48d-52bbd6ec4b69/estado
+content-type: application/json
+
+{
+    "estado": "En camino"
+}

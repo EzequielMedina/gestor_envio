@@ -26,6 +26,9 @@ func (s *EnvioService) RegistrarEnvio(envioResquests *requests.EnvioRequest) (st
 		return "", err
 	}
 
+	//enviamos al microServicio de facturacion la informacion
+	s.ClientFacturacion.GenerarFacturador(envio.ID)
+
 	return envio.NumeroSeguimiento, nil
 
 }

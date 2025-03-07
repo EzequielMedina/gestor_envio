@@ -5,14 +5,21 @@ import (
 
 	"main.go/internal/adapter/config"
 	"main.go/internal/adapter/handler/api"
+	asignarEnvioHandler "main.go/internal/adapter/handler/api/asignarEnvio"
 	EnvioHandler "main.go/internal/adapter/handler/api/envio"
+	transportistaHandler "main.go/internal/adapter/handler/api/transportista"
+	"main.go/internal/adapter/handler/client/facturacion"
 	"main.go/internal/core/domain"
 	"main.go/internal/core/domain/estados"
+	"main.go/internal/core/service/asignarEnvio"
 	envioService "main.go/internal/core/service/envio"
 	hisotiralEstadoService "main.go/internal/core/service/historialEstado"
+	transportistaService "main.go/internal/core/service/transportista"
 	mysql "main.go/internal/storage/mySql"
+	asignarenvio "main.go/internal/storage/mySql/asignarEnvio"
 	"main.go/internal/storage/mySql/envio"
 	historialestado "main.go/internal/storage/mySql/historialEstado"
+	"main.go/internal/storage/mySql/transportista"
 )
 
 func main() {
@@ -34,15 +41,26 @@ func main() {
 	}
 	log.Println("Database connected")
 
+	clienteFacturacion := facturacion.NewFacturarClient(config.ClientFact)
+
 	//dependency injection
 	historialEstadoRepository := historialestado.NewHistorialEstadoRepository(db)
 	historialEstadoService := hisotiralEstadoService.NewHistorialEstadoService(historialEstadoRepository)
 
 	envioRepository := envio.NewEnvioRepository(db)
-	envioServ := envioService.NewEnvioService(envioRepository, historialEstadoService)
+	envioServ := envioService.NewEnvioService(envioRepository, historialEstadoService, *clienteFacturacion)
 	envioHand := EnvioHandler.NewEnvioHandler(envioServ)
+
+	transportistaRepo := transportista.NewTransportistaRepository(db)
+	transportistaService := transportistaService.NewTransportistaService(transportistaRepo)
+	transportistaHandler := transportistaHandler.NewTransportistaHandler(transportistaService)
+
+	asignarEnvioRepository := asignarenvio.NewAsignarEnvioRepository(db)
+	asingarEnvioService := asignarEnvio.NewAsignarEnvioService(historialEstadoService, transportistaService, envioServ, asignarEnvioRepository)
+	asinarEnvioHandler := asignarEnvioHandler.NewAsignarEnvioHandler(asingarEnvioService)
+
 	//router
-	router, err := api.NewRouter(config.Http, *envioHand)
+	router, err := api.NewRouter(config.Http, *envioHand, *asinarEnvioHandler, *transportistaHandler)
 	if err != nil {
 		log.Fatalf("Could not create the router: %v", err)
 	}

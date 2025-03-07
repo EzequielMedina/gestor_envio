@@ -7,7 +7,7 @@ import (
 type EnTransito struct{}
 
 func (e *EnTransito) Nombre() string {
-	return "EnTransito"
+	return "En transito"
 }
 
 func (e *EnTransito) SiguienteEstado() EstadoEnvio {

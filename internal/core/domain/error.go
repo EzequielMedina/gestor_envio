@@ -8,7 +8,7 @@ var (
 	// ErrInternal is an error for when an internal service fails to process the request
 	ErrInternal = errors.New("internal error")
 	// ErrDataNotFound is an error for when requested data is not found
-	ErrDataNotFound = errors.New("data not found")
+	ErrDataNotFound = errors.New("record not found")
 	// ErrNoUpdatedData is an error for when no data is provided to update
 	ErrNoUpdatedData = errors.New("no data to update")
 	// ErrConflictingData is an error for when data conflicts with existing data
@@ -53,4 +53,17 @@ var (
 	ErrEnvioIDRequerido = errors.New("el ID del envío es requerido")
 	// ErrEstadoRequerido is an error for when the state is required
 	ErrEstadoRequerido = errors.New("el estado es requerido")
+
+	ErrNumeroSeguimientoRequerido = errors.New("el número de seguimiento es requerido")
+	ErrPedidoNoEnProceso          = errors.New("el pedido no se encuentra en proceso")
+
+	ErrNumeroDeSeguimientoNoEncontrado = errors.New("el número de seguimiento no fue encontrado")
+
+	ErrPedidoNoExiste   = errors.New("el pedido no existe")
+	ErrPedidoYaAsignado = errors.New("el pedido ya fue asignado")
+	ErrEmailRequerido   = errors.New("el email es requerido")
+
+	ErrTransportistaNoEncontrado       = errors.New("el transportista no fue encontrado")
+	ErrEstadoInvalido                  = errors.New("el estado es inválido")
+	ErrTransportistaConPedidoPendiente = errors.New("el transportista tiene un pedido pendiente")
 )

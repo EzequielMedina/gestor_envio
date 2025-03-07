@@ -20,3 +20,17 @@ func (e *Envio) CambiarEstado() {
 func (e *Envio) GuardarCambioEstado() estados.HistorialEstado {
 	return e.EstadoActual.GuardarHistorial(e.ID)
 }
+
+func (e *Envio) ObtenerEstadoActualApartirDelEstado(estado string) {
+	switch estado {
+	case "En tránsito":
+		e.EstadoActual = &estados.EnTransito{}
+	case "En camino":
+		e.EstadoActual = &estados.EnCamino{}
+	case "Entregado":
+		e.EstadoActual = &estados.Entregado{}
+	default:
+		e.EstadoActual = &estados.Pendiente{}
+	}
+
+}

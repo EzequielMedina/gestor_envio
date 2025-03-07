@@ -1,0 +1,24 @@
+Enunciado del Negocio
+Una empresa de logística necesita un microservicio de gestión de envíos para administrar los pedidos que sus clientes realizan y hacer el seguimiento de sus entregas. El sistema debe permitir registrar pedidos, asignarlos a transportistas, actualizar el estado de la entrega y consultar el historial de envíos.
+
+Este microservicio será utilizado por otras aplicaciones dentro del ecosistema de la empresa, como una app móvil para transportistas y un portal web para clientes.
+
+Casos de Uso
+Registrar un nuevo pedido de envío
+
+Un cliente solicita el envío de un paquete proporcionando detalles como remitente, destinatario, dirección y peso del paquete.
+El sistema genera un número de seguimiento único y almacena el pedido en estado "Pendiente".
+Asignar un pedido a un transportista
+
+Un operador logístico asigna un transportista disponible para la entrega.
+El estado del pedido cambia a "En tránsito".
+Actualizar el estado del envío
+
+El transportista puede marcar el pedido como "En camino", "Intento fallido" o "Entregado".
+Si la entrega falla, se debe registrar la razón del intento fallido.
+Consultar el estado de un pedido
+
+Un cliente puede consultar el estado de su envío proporcionando el número de seguimiento.
+Obtener el historial de entregas de un transportista
+
+Un transportista o administrador puede visualizar los envíos entregados en un rango de fechas.

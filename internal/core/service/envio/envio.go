@@ -3,20 +3,23 @@ package envio
 import (
 	"github.com/google/uuid"
 	"main.go/internal/adapter/handler/api/requests"
+	"main.go/internal/adapter/handler/client/facturacion"
 	"main.go/internal/core/domain"
 	"main.go/internal/core/domain/estados"
 	"main.go/internal/core/ports"
 )
 
 type EnvioService struct {
-	HistorialEstado ports.HistorialEstadoService
-	Repo            ports.EnvioRepository
+	HistorialEstado   ports.HistorialEstadoService
+	Repo              ports.EnvioRepository
+	ClientFacturacion facturacion.FacturarClient
 }
 
-func NewEnvioService(repo ports.EnvioRepository, historialEstado ports.HistorialEstadoService) *EnvioService {
+func NewEnvioService(repo ports.EnvioRepository, historialEstado ports.HistorialEstadoService, facturacionClient facturacion.FacturarClient) *EnvioService {
 	return &EnvioService{
-		HistorialEstado: historialEstado,
-		Repo:            repo,
+		HistorialEstado:   historialEstado,
+		Repo:              repo,
+		ClientFacturacion: facturacionClient,
 	}
 }
 
